@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48.187023mm"
+   height="48.187023mm"
+   viewBox="0 0 48.187023 48.187023"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="email_cutout_icon.svg"
+   inkscape:version="1.2.2 (1:1.2.2+202305151914+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.4734708"
+     inkscape:cx="52.936237"
+     inkscape:cy="111.64117"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="powermask"
+       id="path-effect2116"
+       is_visible="true"
+       lpeversion="1"
+       uri="#mask-powermask-path-effect2116"
+       invert="false"
+       hide_mask="false"
+       background="true"
+       background_color="#ffffffff" />
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask-powermask-path-effect2116">
+      <path
+         id="mask-powermask-path-effect2116_box"
+         style="fill:#ffffff;fill-opacity:1"
+         d="m 55.98707,49.779307 h 50.18702 V 99.966329 H 55.98707 Z" />
+      <text
+         xml:space="preserve"
+         style="font-size:50.8px;font-family:'Old London';-inkscape-font-specification:'Old London';fill:#ffffff;stroke:#ffffff;stroke-width:3.70417;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         x="65.840584"
+         y="86.04882"
+         id="text2114"><tspan
+           sodipodi:role="line"
+           id="tspan2112"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.8px;font-family:'Red Hat Mono';-inkscape-font-specification:'Red Hat Mono Bold';fill:#000000;stroke-width:3.70417"
+           x="65.840584"
+           y="86.04882">@</tspan></text>
+    </mask>
+    <filter
+       id="mask-powermask-path-effect2116_inverse"
+       inkscape:label="filtermask-powermask-path-effect2116"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect2116_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect2116_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-68.253278,-53.406256)">
+    <path
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:3.70417;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="path234"
+       mask="url(#mask-powermask-path-effect2116)"
+       inkscape:path-effect="#path-effect2116"
+       sodipodi:type="arc"
+       sodipodi:cx="81.080582"
+       sodipodi:cy="74.872818"
+       sodipodi:rx="22.241426"
+       sodipodi:ry="22.241426"
+       d="M 103.32201,74.872818 A 22.241426,22.241426 0 0 1 81.080582,97.114244 22.241426,22.241426 0 0 1 58.839155,74.872818 22.241426,22.241426 0 0 1 81.080582,52.631392 22.241426,22.241426 0 0 1 103.32201,74.872818 Z"
+       transform="translate(11.266208,2.6269491)"
+       inkscape:label="path234" />
+  </g>
+</svg>

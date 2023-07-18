@@ -1,1 +1,135 @@
-@use "./reset"
+@use "./reset";
+@use "./colors" as clr;
+
+:root{
+
+    --clr-main-900: #16161D;
+    --clr-main-100: #fff1e3;
+    --clr-main-100-semi-transparent: #fff1e329;
+
+    --clr-accent-400: #5591e6;
+    --clr-accent-semi-transparent: #5591e663;
+
+    --clr-main-bg: var(--clr-main-900);
+    --clr-main-fg: var(--clr-main-100);
+}
+
+html,
+body{
+    height: 100%;
+}
+
+body{
+    background-color: var(--clr-main-bg);
+    // background-image: radial-gradient(circle at 50% 50%, var(--clr-main-100-semi-transparent) 0%, var(--clr-main-100-semi-transparent) 10%, transparent 10%);
+    background-size: 1rem 1rem;
+
+    color: var(--clr-main-fg);
+    font-family: 'Red Hat Mono', monospace;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "intro about"
+        "intro contact";
+    gap: .25rem;
+
+    padding: .25rem;
+    // border: 2px solid var(--clr-accent-400);
+    border-radius: 1rem;
+}
+
+.intro{
+    grid-area: intro;
+}
+
+.about-me{
+    grid-area: about;
+}
+
+.contact{
+    grid-area: contact;
+}
+
+///////////
+
+a{
+    display: flex;
+    align-items: center;
+    color: var(--clr-main-fg);
+    text-underline-offset: .3rem;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+section{
+    // border: 1px solid var(--clr-accent-400);
+    border-radius: .75rem;
+
+    // box-shadow: inset 0 0 .5rem var(--clr-accent-semi-transparent);
+
+    padding: .5rem;
+    position: relative;
+}
+section::before{
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background-color: rgba(255, 255, 255, .1);  
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+button{
+    --_bg: transparent;
+    outline: 0;
+    background-color: var(--_bg);
+    color: inherit;
+    border: 1px solid var(--clr-accent-400);
+    border-right: 0;
+    position: relative;
+    margin-right: 1rem;
+    padding-left: .5rem;
+    cursor: pointer;
+    transition: .25s background-color;
+}
+button:focus-visible,
+button:hover{
+    --_bg: var(--clr-accent-semi-transparent);
+}
+
+button::after{
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: -1px;
+    top: -1px;
+    // height: 100%;
+    width: 1rem;
+    border: 1px solid var(--clr-accent-400);
+    background-color: var(--_bg);
+    border-left: 0;
+    border-radius: 0% 100% 0% 0%;
+    transition: .1s background-color;
+}
+
+///////////
+.small-icon{
+    width: 2rem;
+}
+
+.small-text-icon{
+    font-size: 2rem;
+    width: 2rem;
+    font-weight: bold;
+    text-decoration: none !important;
+    text-align: center;
+}
