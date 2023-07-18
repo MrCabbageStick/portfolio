@@ -1,1 +1,106 @@
-@use "./reset"
+@use "./reset";
+
+:root{
+    --clr-main-900: #16161D;
+    --clr-main-100: #fff1e3;
+    --clr-off-white: #f0c9a3;
+
+    --clr-main-bg: var(--clr-main-900);
+    --clr-main-fg: var(--clr-main-100);
+    --clr-text-hover: var(--clr-off-white);
+
+    --clr-dotted-bg: color-mix(in srgb, var(--clr-main-100) 5%, transparent); // Awaits better support
+    --clr-dotted-bg: #fff1e30d;
+
+    --transition-time: .2s;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body{
+    display: grid;
+    place-items: center;
+
+    background-color: var(--clr-main-bg);
+    background-image: radial-gradient(circle at 50% 50%, var(--clr-dotted-bg) 0%, var(--clr-dotted-bg) 10%, transparent 10%);
+    background-size: 1rem 1rem;
+
+    color: var(--clr-main-fg);
+    font-family: 'Red Hat Mono', monospace;
+}
+
+main{
+    display: grid;
+
+    grid-template-columns: min-content auto;
+    grid-template-rows: min-content auto;
+    grid-template-areas: 
+        "name name"
+        "picker content";
+    gap: 1rem;
+
+    width: min(50rem, 100%);
+    min-height: 25rem;
+}
+
+.name{
+    grid-area: name;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+}
+
+.content-picker{
+    --_indicator-position: .2rem;
+    grid-area: picker;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    &__button{
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        color: inherit;
+        min-width: 7rem;
+        text-align: left;
+        border-left: 2px solid transparent;
+        transition: var(--transition-time) color, var(--transition-time) border-color;
+        padding: .25rem 0 0 .5rem;
+
+        &:hover,
+        &:focus-visible{
+            color: var(--clr-text-hover);
+            border-color: var(--clr-text-hover);
+        }
+    }
+
+    &__indicator{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        width: .2rem;
+        background-color: var(--clr-off-white);
+
+        &::after{
+            content: '';
+            position: absolute;
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+            transform: rotateZ(45deg) translate(-25%, var(--_indicator-position));
+            width: .8rem;
+            height: .8rem;
+            background-color: var(--clr-text-hover);
+        }
+    }
+}
+
+.content{
+    grid-area: content;
+    font-size: 1.2rem;
+}
