@@ -2,15 +2,23 @@
 
 :root{
     --clr-main-900: #16161D;
+    --clr-main-800: hsl(240, 14%, 12%);
     --clr-main-100: #fff1e3;
     --clr-off-white: #f0c9a3;
 
-    --clr-main-bg: var(--clr-main-900);
+    --clr-main-bg: var(--clr-main-800);
     --clr-main-fg: var(--clr-main-100);
+    --clr-main-folder: var(--clr-main-800);
     --clr-text-hover: var(--clr-off-white);
+
+    --clr-box-shadow: #00000098;
 
     --clr-dotted-bg: color-mix(in srgb, var(--clr-main-100) 5%, transparent); // Awaits better support
     --clr-dotted-bg: #fff1e30d;
+
+    --clr-accent-green: #68c568;
+    --clr-accent-gold: #dbaf51;
+    --clr-accent-pink: #ec8989;
 
     --transition-time: .2s;
 }
@@ -33,74 +41,102 @@ body{
 }
 
 main{
-    display: grid;
-
-    grid-template-columns: min-content auto;
-    grid-template-rows: min-content auto;
-    grid-template-areas: 
-        "name name"
-        "picker content";
-    gap: 1rem;
+    position: relative;
 
     width: min(50rem, 100%);
-    min-height: 25rem;
+    height: 25rem;
 }
 
 .name{
-    grid-area: name;
     font-size: 3rem;
     font-weight: 600;
     letter-spacing: .2rem;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: var(--clr-main-folder);
+    padding: 0 1rem;
+    isolation: isolate;
+    z-index: 1;
+    box-shadow: 0 0 .3rem var(--clr-box-shadow);
+
+    &::after{
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 0;
+        bottom: 0;
+        aspect-ratio: 1;
+        background-color: inherit;
+        border-radius: 0 100% 0 0;
+        z-index: 2;
+        box-shadow: .1rem 0 .1rem var(--clr-box-shadow);
+    }
 }
 
 .content-picker{
-    --_indicator-position: .2rem;
-    grid-area: picker;
-    position: relative;
+    position: absolute;
+    top: 10%;
+    right: 100%;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 1rem;
 
     &__button{
-        background-color: transparent;
+        --_clr-accent: var(--clr-accent-green);
+        background-color: var(--clr-main-folder);
+        color: inherit;
         border: 0;
         outline: 0;
         cursor: pointer;
-        color: inherit;
-        min-width: 7rem;
+
+        width: 12rem;
+        height: 3rem;
         text-align: left;
         border-left: 2px solid transparent;
-        transition: var(--transition-time) color, var(--transition-time) border-color;
-        padding: .25rem 0 0 .5rem;
+        transition: var(--transition-time) transform;
+        padding: .25rem 0 0 1rem;
+
+        position: relative;
+        right: -40%;
+        z-index: 1;
+
+        box-shadow: 0 0 .2rem var(--clr-box-shadow);
 
         &:hover,
         &:focus-visible{
-            color: var(--clr-text-hover);
-            border-color: var(--clr-text-hover);
+            transform: translateX(-5%);
         }
-    }
 
-    &__indicator{
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 100%;
-        width: .2rem;
-        background-color: var(--clr-off-white);
-
-        &::after{
+        &::before{
             content: '';
             position: absolute;
-            clip-path: polygon(0 0, 100% 100%, 0 100%);
-            transform: rotateZ(45deg) translate(-25%, var(--_indicator-position));
-            width: .8rem;
-            height: .8rem;
-            background-color: var(--clr-text-hover);
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: .2rem;
+            background-color: var(--_clr-accent);
         }
+
+        &.selected{
+            transform: translateX(-15%);
+        }
+
+        // Managing accent colors
+        &:nth-child(2n){ --_clr-accent: var(--clr-accent-gold); }
+        &:nth-child(3n){ --_clr-accent: var(--clr-accent-pink); }
     }
 }
 
 .content{
     grid-area: content;
     font-size: 1.2rem;
+    position: relative;
+
+    height: 100%;
+    padding: .5rem;
+
+    box-shadow: 0 0 .2rem var(--clr-box-shadow);
+    z-index: 20;
+    background-color: var(--clr-main-folder);
 }
