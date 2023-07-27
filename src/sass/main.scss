@@ -1,1 +1,27 @@
-@use "./reset"
+@use "./reset";
+@use "./crt";
+
+html,
+body{
+    height: 100%;
+}
+
+body{
+    position: relative;
+}
+
+.links{
+    display: grid;
+    justify-items: center;
+    gap: 0 1rem;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: min-content min-content;
+    grid-template-areas: 
+        "one one"
+        "two three"
+    ;
+
+    & > :first-child{
+        grid-area: one;
+    }
+}
